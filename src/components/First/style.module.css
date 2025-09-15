@@ -52,6 +52,19 @@
   border-radius: 8px;
 }
 
+.container div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container div span {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--color-primary);
+  font-family: var(--font-inter);
+}
+
 @media only screen and (max-width: 768px) {
   .container h3 {
     font-size: 24px;

@@ -46,7 +46,11 @@ export default function First({ handleTicket }) {
           retreat offers the perfect opportunity to step away from the noise and
           focus on what matters most—each other.
         </span>
-        <button onClick={handleTicket}>Get a Ticket</button>
+        <div>
+          <button onClick={handleTicket}>Get a Ticket</button>
+
+          <span>£220</span>
+        </div>
       </div>
     </div>
   );
