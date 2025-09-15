@@ -1,0 +1,185 @@
+/** @format */
+
+.dropdown {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+  transition: opacity 1.3s;
+}
+
+.ticket {
+  position: relative;
+  padding: 16px 24px;
+  background-color: white;
+  border-radius: 8px;
+  font-family: var(--font-inter);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid hsla(0, 0%, 90%, 1);
+  border-radius: 16px;
+  padding: 24px 10px;
+  gap: 16px;
+}
+
+.quantity div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.more {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.bank {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name span,
+.name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.name img {
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.first {
+  display: flex;
+  gap: 40px;
+}
+
+.span {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.span span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.span input {
+  padding: 16px 24px;
+  font-size: 16px;
+  font-family: var(--font-inter);
+  border-radius: 8px;
+  border: 1px solid hsla(0, 0%, 90%, 1);
+}
+
+.span input:focus {
+  outline: none;
+}
+
+.span button {
+  margin-top: 100px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-dark);
+  font-size: 16px;
+  font-family: var(--font-inter);
+  padding: 16px 24px;
+  color: var(--color-primary);
+  border-radius: 8px;
+}
+
+svg {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .span span {
+    font-size: 16px;
+  }
+
+  .span input {
+    padding: 16px 8px;
+  }
+  .bank {
+    order: 1;
+    margin-top: 50px;
+  }
+
+  .button {
+    margin-top: 50px;
+    order: 1;
+  }
+
+  .button button {
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-dark);
+    font-size: 16px;
+    font-family: var(--font-inter);
+    padding: 16px 24px;
+    color: var(--color-primary);
+    border-radius: 8px;
+  }
+
+  .first {
+    flex-direction: column;
+  }
+}

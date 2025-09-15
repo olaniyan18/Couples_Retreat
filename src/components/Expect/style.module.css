@@ -1,0 +1,64 @@
+/** @format */
+
+.container {
+  display: flex !important;
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text);
+  font-family: var(--font-inter);
+}
+
+.container img {
+  width: 350px;
+}
+
+.container span {
+  margin-top: 10px;
+}
+
+.expect {
+  padding: 0 100px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.expect h2 {
+  margin: 0;
+  font-size: 40px;
+  font-family: var(--font-inter);
+  color: var(--color-text);
+}
+
+@media only screen and (max-width: 768px) {
+  .expect {
+    padding: 30px;
+    align-items: center;
+  }
+
+  .expect h2 {
+    font-size: 18px;
+  }
+
+  .container {
+    gap: 9px;
+  }
+
+  .container img {
+    width: 312px;
+  }
+
+  .container span {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .mobileList {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}

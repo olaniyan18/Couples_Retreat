@@ -1,0 +1,65 @@
+/** @format */
+
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import styles from "./style.module.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import image1 from "../../assets/expect1.png";
+import image2 from "../../assets/expect2.png";
+import image3 from "../../assets/expect3.png";
+
+export default function Expect() {
+  const info = [
+    { image: image1, text: "Guided Relationship Workshops" },
+    { image: image2, text: "Mindfulness & Relaxation" },
+    { image: image3, text: "Quality Time Together" },
+    { image: image1, text: "Romantic Settings" },
+    { image: image2, text: "Adventure & Shared Experiences" },
+  ];
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
+  return (
+    <div className={styles.expect}>
+      <h2>What to Expect</h2>
+
+      {isMobile ? (
+        <div className={styles.mobileList}>
+          {info.map((data, index) => (
+            <div key={index} className={styles.container}>
+              <img src={data.image} alt='' />
+              <span>{data.text}</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Slider {...settings}>
+          {info.map((data, index) => (
+            <div key={index} className={styles.container}>
+              <img src={data.image} alt='' />
+              <span>{data.text}</span>
+            </div>
+          ))}
+        </Slider>
+      )}
+    </div>
+  );
+}

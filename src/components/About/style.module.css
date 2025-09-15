@@ -1,0 +1,59 @@
+/** @format */
+
+.about {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  gap: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container h2 {
+  font-size: 40px;
+  margin: 0;
+  font-family: var(--font-inter);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.container span {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  line-height: 1.5;
+  text-align: justify;
+  color: var(--color-text2);
+}
+
+.about img {
+  width: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 30px;
+    gap: 50px;
+  }
+
+  .container {
+    gap: 12px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  .container span {
+    font-size: 16px;
+  }
+
+  .about img {
+    width: 312px;
+  }
+}
