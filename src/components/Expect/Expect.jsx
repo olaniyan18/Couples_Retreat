@@ -6,16 +6,18 @@ import styles from "./style.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image1 from "../../assets/expect1.png";
-import image2 from "../../assets/expect2.png";
+import image2 from "../../assets/expect1.webp";
 import image3 from "../../assets/expect3.png";
+import image4 from "../../assets/expect4.jpg";
+import image5 from "../../assets/expect5.jpeg";
 
 export default function Expect() {
   const info = [
-    { image: image1, text: "Guided Relationship Workshops" },
-    { image: image2, text: "Mindfulness & Relaxation" },
-    { image: image3, text: "Quality Time Together" },
-    { image: image1, text: "Romantic Settings" },
-    { image: image2, text: "Adventure & Shared Experiences" },
+    { image: image1, text: "Red Carpet" },
+    { image: image2, text: "Games" },
+    { image: image3, text: "Couple's Dance" },
+    { image: image4, text: "Seminar" },
+    { image: image5, text: "Prize giving" },
   ];
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);

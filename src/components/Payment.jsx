@@ -11,6 +11,7 @@ import Footer from "./Footer/Footer";
 import Ticket from "./Ticket/Ticket";
 import MobileTicket from "./Ticket/MobileTicket";
 import { useNavigate } from "react-router-dom";
+import Program from "./Program/Program";
 
 export default function Payment() {
   const [isMobileTicket, setIsMobileTicket] = useState(false);
@@ -35,6 +36,7 @@ export default function Payment() {
       <First handleTicket={handleTicket} />
       <About />
       <Expect />
+      <Program />
       <Detail handleTicket={handleTicket} />
       <Footer />
 
