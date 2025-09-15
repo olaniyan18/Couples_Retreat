@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import Payment from "./components/payment";
+import Payment from "./components/Payment";
 import { ToastContainer } from "react-toastify";
 import { Zoom } from "react-toastify";
 import styles from "./components/payment.module.css";
