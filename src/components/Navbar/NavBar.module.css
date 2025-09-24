@@ -25,6 +25,10 @@
   cursor: pointer;
 }
 
+.book:hover {
+  background-color: var(--color-dark);
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -221,7 +225,7 @@
   }
 
   .nav a span {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 

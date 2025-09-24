@@ -82,7 +82,7 @@
 }
 
 .event span {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
   color: var(--color-text);
   font-family: var(--font-inter);
@@ -98,6 +98,10 @@
   border-radius: 8px;
   cursor: pointer;
   border: none;
+}
+
+.event button:hover {
+  background-color: var(--color-dark);
 }
 
 @media only screen and (max-width: 768px) {

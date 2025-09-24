@@ -134,7 +134,7 @@
   margin-top: 100px;
   cursor: pointer;
   border: none;
-  background-color: var(--color-dark);
+  background-color: var(--color-secondary);
   font-size: 16px;
   font-family: var(--font-inter);
   padding: 16px 24px;
@@ -142,8 +142,30 @@
   border-radius: 8px;
 }
 
+.span button:hover {
+  background-color: var(--color-dark);
+}
+
 svg {
   cursor: pointer;
+}
+
+.span button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ticket img {
+  margin: 0 auto;
+}
+
+.ticket p {
+  margin: 0;
+  width: 450px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text2);
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 768px) {
@@ -181,5 +203,28 @@ svg {
 
   .first {
     flex-direction: column;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+  }
+  .mobile img {
+    margin: 0 auto;
+  }
+
+  .mobile p {
+    margin: 0;
+    width: 300px;
+    line-height: 1.5;
+    font-family: "Inter";
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text2);
+    font-weight: 400;
   }
 }

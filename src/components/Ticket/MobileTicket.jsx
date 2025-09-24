@@ -4,16 +4,33 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 import cancel from "../../assets/cancel.svg";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import copy from "../../assets/copy.svg";
 
 export default function MobileTicket() {
   const [quantity, setQuantity] = useState(1);
   const price = 220;
+  const [details, setDetails] = useState({
+    first_name: "",
+    last_name: "",
+    email_address: "",
+  });
+
+  function handleChange(e) {
+    setDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  const navigate = useNavigate();
 
   function ConfirmPay() {
-    alert(`You selected ${quantity} ticket(s). Total: £${quantity * price}`);
+    // setIsSuccess(true);
+    console.log(details, quantity, quantity * price);
+    navigate("/success");
+    // alert(`You selected ${quantity} ticket(s). Total: £${quantity * price}`);
   }
+  const isConfirm = Object.values(details).every(
+    (val) => val && val.trim() !== ""
+  );
 
   const handleIncrease = () => {
     setQuantity((prev) => prev + 1);
@@ -86,16 +103,16 @@ export default function MobileTicket() {
           <div className={styles.bank}>
             <div className={styles.name}>
               <label>Bank Name: </label>
-              <span>Barclays</span>
+              <span>Revolut</span>
             </div>
             <div className={styles.name}>
               <label>Account Number: </label>
               <span>
-                53901742
+                69588880
                 <img
                   src={copy}
                   onClick={() => {
-                    navigator.clipboard.writeText("53901742");
+                    navigator.clipboard.writeText("69588880");
                     toast.success("copied to clipboard");
                   }}
                   alt=''
@@ -105,7 +122,7 @@ export default function MobileTicket() {
             <div className={styles.name}>
               <label>Sort code: </label>
               <span>
-                20-25-96{" "}
+                04-00-75{" "}
                 <img
                   src={copy}
                   onClick={() => {
@@ -128,19 +145,39 @@ export default function MobileTicket() {
           <div className={styles.first}>
             <div className={styles.span}>
               <span>First Name</span>
-              <input type='text' />
+              <input
+                type='text'
+                name='first_name'
+                value={details.first_name}
+                placeholder='First Name'
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.span}>
               <span>Last Name</span>
-              <input type='text' />
+              <input
+                type='text'
+                name='last_name'
+                value={details.last_name}
+                placeholder='Last Name'
+                onChange={handleChange}
+              />
             </div>
           </div>
           <div className={styles.span}>
             <span>Email Address</span>
-            <input type='email' />
+            <input
+              type='email'
+              name='email_address'
+              value={details.email_address}
+              placeholder='Email Address'
+              onChange={handleChange}
+            />
           </div>
           <div className={styles.span}>
-            <button onClick={ConfirmPay}>Confirm Payment</button>
+            <button onClick={ConfirmPay} disabled={!isConfirm}>
+              Confirm Payment
+            </button>
           </div>
         </div>
       </div>
