@@ -35,8 +35,8 @@ export default function First({ handleTicket }) {
     },
     {
       image: image6,
-      h3: "Contact Omowaare for more information",
-      span: "+44 7957 991374",
+      h3: "Dress Code",
+      span: "Friday: Black Tie / Saturday: A touch of White on Blue Jeans",
       p: "",
     },
   ];
