@@ -7,18 +7,29 @@
 }
 
 .container {
-  position: absolute;
+  position: relative;
   padding: 0px 60px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   color: var(--color-primary);
   font-family: var(--font-inter);
-  top: 290px;
+  top: -400px;
+}
+
+.container2 {
+  position: relative;
+  padding: 0px 60px;
+  top: -400px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: -webkit-fill-available;
 }
 
 .container h3 {
   margin: 0;
+  width: 100%;
   font-size: 50px;
   font-weight: 500;
 }
@@ -38,9 +49,10 @@
 .container span {
   font-size: 24px;
   font-weight: 400;
+  /* width: 50%; */
 }
 
-.container button {
+.container2 button {
   border: none;
   background-color: var(--color-secondary);
   color: var(--color-primary);
@@ -52,17 +64,24 @@
   border-radius: 8px;
 }
 
+.container p {
+  font-size: 18px;
+  text-align: right;
+  margin-top: -30px;
+  margin-right: 60px;
+}
+
 .container button:hover {
   background-color: var(--color-dark);
 }
-
+/* 
 .container div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
-.container div span {
+.container2 span {
   font-size: 30px;
   font-weight: 500;
   color: var(--color-primary);
@@ -79,8 +98,12 @@
     text-align: justify;
   }
 
-  .container {
+  .container,
+  .container2 {
     padding: 0 24px;
-    top: 180px;
+  }
+
+  .container2 {
+    margin-top: 10px;
   }
 }
