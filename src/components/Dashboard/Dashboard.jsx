@@ -2,26 +2,24 @@
 import styles from "./style.module.css";
 import image from "../../assets/Logo.jpg";
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 
 export default function Dashboard() {
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    const fetchPayments = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "payments"));
-        const allPayments = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setPayments(allPayments);
-      } catch (error) {
-        console.error("Error fetching payments: ", error);
-      }
-    };
-    fetchPayments();
+    const q = query(collection(db, "payments"), orderBy("createdAt", "desc"));
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const allPayments = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setPayments(allPayments);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   return (

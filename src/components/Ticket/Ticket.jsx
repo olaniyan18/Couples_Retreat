@@ -8,7 +8,7 @@ import copy from "../../assets/copy.svg";
 import { toast } from "react-toastify";
 import Success from "./Success/Success";
 // import { DetailsContext } from "../Context";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 
 export default function Ticket({ closeTicket }) {
@@ -31,7 +31,7 @@ export default function Ticket({ closeTicket }) {
       details,
       quantity,
       total: quantity * price,
-      createdAt: new Date().toISOString(),
+      createdAt: serverTimestamp(),
     };
 
     try {

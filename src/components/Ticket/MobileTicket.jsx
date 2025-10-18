@@ -6,6 +6,8 @@ import cancel from "../../assets/cancel.svg";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import copy from "../../assets/copy.svg";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
 
 export default function MobileTicket() {
   const [quantity, setQuantity] = useState(1);
@@ -22,12 +24,22 @@ export default function MobileTicket() {
 
   const navigate = useNavigate();
 
-  function ConfirmPay() {
-    // setIsSuccess(true);
-    console.log(details, quantity, quantity * price);
-    navigate("/success");
-    // alert(`You selected ${quantity} ticket(s). Total: £${quantity * price}`);
+  async function ConfirmPay() {
+    const newPayment = {
+      details,
+      quantity,
+      total: quantity * price,
+      createdAt: serverTimestamp(),
+    };
+
+    try {
+      await addDoc(collection(db, "payments"), newPayment);
+      navigate("/success");
+    } catch (e) {
+      console.error("Error adding payment: ", e);
+    }
   }
+
   const isConfirm = Object.values(details).every(
     (val) => val && val.trim() !== ""
   );
