@@ -47,3 +47,27 @@
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .grid span,
+  .grid2 span {
+    font-size: 10px;
+    height: fit-content;
+  }
+
+  .grid2 span {
+    padding: 4px;
+  }
+
+  .div img {
+    width: 40px;
+  }
+
+  .div span {
+    font-size: 14px;
+  }
+
+  .dashboard {
+    padding: 15px;
+  }
+}
